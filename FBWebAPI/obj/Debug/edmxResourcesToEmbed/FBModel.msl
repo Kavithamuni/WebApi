@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FriendBookDBModelStoreContainer" CdmEntityContainer="FriendBookDBEntities">
+    <EntitySetMapping Name="FriendsBooksMappings">
+      <EntityTypeMapping TypeName="FriendBookDBModel.FriendsBooksMapping">
+        <MappingFragment StoreEntitySet="FriendsBooksMapping">
+          <ScalarProperty Name="FriendId" ColumnName="FriendId" />
+          <ScalarProperty Name="BookId" ColumnName="BookId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BooksLists">
+      <EntityTypeMapping TypeName="FriendBookDBModel.BooksList">
+        <MappingFragment StoreEntitySet="BooksList">
+          <ScalarProperty Name="BookName" ColumnName="BookName" />
+          <ScalarProperty Name="BookID" ColumnName="BookID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FriendsLists">
+      <EntityTypeMapping TypeName="FriendBookDBModel.FriendsList">
+        <MappingFragment StoreEntitySet="FriendsList">
+          <ScalarProperty Name="FriendName" ColumnName="FriendName" />
+          <ScalarProperty Name="FriendId" ColumnName="FriendId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FriendBookDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BooksList">
+    <Key>
+      <PropertyRef Name="BookID" />
+    </Key>
+    <Property Name="BookID" Type="int" Nullable="false" />
+    <Property Name="BookName" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FriendsBooksMapping">
+    <Key>
+      <PropertyRef Name="FriendId" />
+      <PropertyRef Name="BookId" />
+    </Key>
+    <Property Name="FriendId" Type="int" Nullable="false" />
+    <Property Name="BookId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FriendsList">
+    <Key>
+      <PropertyRef Name="FriendId" />
+    </Key>
+    <Property Name="FriendId" Type="int" Nullable="false" />
+    <Property Name="FriendName" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="FriendBookDBModelStoreContainer">
+    <EntitySet Name="BooksList" EntityType="Self.BooksList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FriendsBooksMapping" EntityType="Self.FriendsBooksMapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FriendsList" EntityType="Self.FriendsList" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
