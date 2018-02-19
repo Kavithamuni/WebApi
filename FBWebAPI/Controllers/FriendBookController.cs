@@ -31,9 +31,19 @@ namespace FBWebAPI.Controllers
         [HttpPost]
         public IHttpActionResult AddBookList([FromBody]BooksList bList)
         {
-            fbentities.BooksLists.Add(bList);
-            fbentities.SaveChanges();
-            return Ok(bList.BookID);
+            bool bookExists = fbentities.BooksLists.Any(b => b.BookID.Equals(bList.BookID));
+            if (bookExists)
+            {
+                return new System.Web.Http.Results.ResponseMessageResult(
+                            Request.CreateErrorResponse((HttpStatusCode)409,
+                            new HttpError("Already exists")));
+            }
+            else
+            {
+                fbentities.BooksLists.Add(bList);
+                fbentities.SaveChanges();
+                return Ok(bList.BookID);
+            }
         }
 
         // To update book details
